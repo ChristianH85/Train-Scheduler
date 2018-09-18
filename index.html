@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"crossorigin="anonymous">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    
+</head>
+<body>
+    <div class= "jumbotron jumbotron-fluid" id = "banner">
+        <div class = "container">
+            <h1>Amtrak is Whack</h1>
+        </div>
+    </div>
+    <section> 
+        <div class = "card" class = "row">
+            <div class= "card-header" id = "top" >Train Schedule</div>
+            <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Train</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency</th>
+                        <th scope="col">Next Train</th>
+                        <th scope="col">Minutes Away</th>
+                      </tr>
+                    </thead>
+                    <tbody class = "plusTrain">
+                        <tr>
+                    
+                        </tr>
+                    </tbody>
+
+        </div>
+    </section>
+
+    <section> 
+        <div class = "card" id ="input-form" class = "row">
+            <div class= "card-header" id = "top" >Add A Train</div>
+            <form>
+                    <label for="train" id= "tag">New Train</label>
+                    <input class="form-control" id = "train" type="text" placeholder="Name of Train">
+                    <label for="destination" id= "tag">Destination</label>
+                    <input class="form-control" id = "destination" type="text" placeholder="Destination">
+                    <label for="first" id= "tag">First Train</label>
+                    <input class="form-control" id = "first" type="text" placeholder="HH:MM">
+                    <label for="frequency"id= "tag">Frequency</label>
+                    <input class="form-control" id = "frequency" type="text" placeholder="mins">
+                    <button type="button" id = "ntrain" class="btn btn-primary btn-sm">Add Train</button>
+            </form>
+    
+            </div>
+    </section>
+    
+    
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script>
+    
+    var config = {
+        apiKey: "AIzaSyCMidiuX3sE1v3mOrJevxGRsOaSLY8MvNU",
+        authDomain: "workdamnit-9dcd1.firebaseapp.com",
+        databaseURL: "https://workdamnit-9dcd1.firebaseio.com/",
+        projectId: "workdamnit-9dcd1",
+        storageBucket: "workdamnit-9dcd1.appspot.com",
+        messagingSenderId: "931054719432"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+        
+        console.log(moment().format("DD/MM/YY hh:mm A"));
+      </script>
+      <script src="assets/js/schedule.js"></script> 
+      
+
+</body>
+</html>
